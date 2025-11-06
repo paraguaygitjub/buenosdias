@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+} 
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff8fb;
+    color: #2c2c2c;
+}
+
+.contenedor {
+    display: flex;
+    min-height: 100vh;
+}
+
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #f2a6c1;
+    border-right: 1px solid #e38bb3;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    animation: aparecer 0.8s ease-out;
+    box-shadow: 0 0 15px rgba(195, 75, 145, 0.2);
+    transition: background-color 0.4s ease;
+}
+
+.menu:hover {
+    background-color: #ec9bb8; 
+}
+
+.menu h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #b34787;
+    transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.menu h2:hover {
+    transform: scale(1.1);
+    color: #c75a9a;
+    cursor: pointer;
+}
+
+.menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu nav a {
+    text-decoration: none;
+    color: #2c2c2c;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu nav a:hover {
+    background-color: #c75a9a;
+    color: #ffffff;
+    transform: translateX(5px);
+    box-shadow: 0 2px 6px rgba(179, 71, 135, 0.3);
+}
+
+.menu nav a.activo {
+    background-color: #b34787;
+    color: white;
+    font-weight: bold;
+    transform: scale(1.03);
+}
+
+.contenido {
+    margin-left: 250px;
+    padding: 50px;
+    min-height: 100vh;
+    background-color: #ffd1e6;
+    animation: fadeIn 1s ease-in;
+    transition: background-color 0.4s ease;
+}
+
+.contenido:hover {
+    background-color: #ffc7e0; 
+}
+
+.contenido h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #b34787;
+    transition: color 0.3s ease;
+}
+
+.contenido h1:hover {
+    color: #c75a9a;
+}
+
+.contenido h2, 
+.contenido h3 {
+    color: #b34787;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.contenido h2:hover,
+.contenido h3:hover {
+    color: #c75a9a;
+}
+
+.contenido p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #2c2c2c;
+}
+.cuadro {
+    background-color: #ffe0ef;
+    border-left: 5px solid #b34787;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(179, 71, 135, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cuadro:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(179, 71, 135, 0.25);
+}
+
+.ejemplos {
+    background-color: #ffe0ef;
+    border-left: 5px solid #b34787;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(179, 71, 135, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ejemplos:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(179, 71, 135, 0.25);
+}
+
+.pie {
+    margin-top: 50px;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #6b6b6b;
+    border-top: 1px solid #e38bb3;
+    background-color: #f2a6c1;
+    transition: background-color 0.4s ease;
+}
+
+.pie:hover {
+    background-color: #ec9bb8;
+    cursor: pointer;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+        border-right: none;
+        position: relative;
+        border-bottom: 1px solid #e38bb3;
+    }
+
+    .contenido {
+        margin-left: 0;
+        padding: 30px;
+    }
+
+    .menu nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu nav a {
+        font-size: 14px;
+    }
+}
